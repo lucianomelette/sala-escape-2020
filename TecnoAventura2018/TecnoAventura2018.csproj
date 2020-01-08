@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{11DFCC3B-4C8F-48A3-90A0-BBB666EB38AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TecnoAventura2018</RootNamespace>
+    <AssemblyName>TecnoAventura2018</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.9.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.2.1\lib\net45\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=2.2.1.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.2.1\lib\net45\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Forms.2.2.1\lib\net45\Vlc.DotNet.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\AudioPlaybackEngine.cs" />
+    <Compile Include="Audio\AutoDisposeFileReader.cs" />
+    <Compile Include="Audio\CachedSound.cs" />
+    <Compile Include="Audio\CachedSoundSampleProvider.cs" />
+    <Compile Include="Audio\LoopStream.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="FontFamilyProvider.cs" />
+    <Compile Include="GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameForm.Designer.cs">
+      <DependentUpon>GameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Intro\IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Intro\IntroScreen.Designer.cs">
+      <DependentUpon>IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\Levels\Level00_Rompe_Hielo\Level00LoginScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level00_Rompe_Hielo\Level00LoginScreen.Designer.cs">
+      <DependentUpon>Level00LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level06_Desafio06\Level06EcuacionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level06_Desafio06\Level06EcuacionScreen.Designer.cs">
+      <DependentUpon>Level06EcuacionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level06_Desafio06\Level06IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level06_Desafio06\Level06IntroScreen.Designer.cs">
+      <DependentUpon>Level06IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level04_Desafio04\Level04IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level04_Desafio04\Level04IntroScreen.Designer.cs">
+      <DependentUpon>Level04IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level04_Desafio04\Level04StandByScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level04_Desafio04\Level04StandByScreen.Designer.cs">
+      <DependentUpon>Level04StandByScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level01_Desafio01\Level01CompleteWordsScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level01_Desafio01\Level01CompleteWordsScreen.Designer.cs">
+      <DependentUpon>Level01CompleteWordsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level02_Desafio02\Level02CharInputScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level02_Desafio02\Level02CharInputScreen.Designer.cs">
+      <DependentUpon>Level02CharInputScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level02_Desafio02\Level02IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level02_Desafio02\Level02IntroScreen.Designer.cs">
+      <DependentUpon>Level02IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05IntroScreen.Designer.cs">
+      <DependentUpon>Level05IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question01Screen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question01Screen.Designer.cs">
+      <DependentUpon>Level05Question01Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question02Screen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question02Screen.Designer.cs">
+      <DependentUpon>Level05Question02Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question03Screen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question03Screen.Designer.cs">
+      <DependentUpon>Level05Question03Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question04Screen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level05_Desafio05\Level05Question04Screen.Designer.cs">
+      <DependentUpon>Level05Question04Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level03_Desafio03\Level03EcuacionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level03_Desafio03\Level03EcuacionScreen.Designer.cs">
+      <DependentUpon>Level03EcuacionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level03_Desafio03\Level03IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level03_Desafio03\Level03IntroScreen.Designer.cs">
+      <DependentUpon>Level03IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level07_Desafio07\Level07AplausosScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level07_Desafio07\Level07AplausosScreen.Designer.cs">
+      <DependentUpon>Level07AplausosScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level07_Desafio07\Level07IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level07_Desafio07\Level07IntroScreen.Designer.cs">
+      <DependentUpon>Level07IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\LevelScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\LevelScreen.Designer.cs">
+      <DependentUpon>LevelScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\VideoStoppableScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\VideoStoppableScreen.Designer.cs">
+      <DependentUpon>VideoStoppableScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\VideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\VideoScreen.Designer.cs">
+      <DependentUpon>VideoScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\BoardScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\BoardScreen.Designer.cs">
+      <DependentUpon>BoardScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Levels\Level01_Desafio01\Level01IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Levels\Level01_Desafio01\Level01IntroScreen.Designer.cs">
+      <DependentUpon>Level01IntroScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ScreenUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ScreenUI.Designer.cs">
+      <DependentUpon>ScreenUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <EmbeddedResource Include="GameForm.resx">
+      <DependentUpon>GameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Intro\IntroScreen.resx">
+      <DependentUpon>IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level00_Rompe_Hielo\Level00LoginScreen.resx">
+      <DependentUpon>Level00LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level06_Desafio06\Level06EcuacionScreen.resx">
+      <DependentUpon>Level06EcuacionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level06_Desafio06\Level06IntroScreen.resx">
+      <DependentUpon>Level06IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level04_Desafio04\Level04IntroScreen.resx">
+      <DependentUpon>Level04IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level04_Desafio04\Level04StandByScreen.resx">
+      <DependentUpon>Level04StandByScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level01_Desafio01\Level01CompleteWordsScreen.resx">
+      <DependentUpon>Level01CompleteWordsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level02_Desafio02\Level02CharInputScreen.resx">
+      <DependentUpon>Level02CharInputScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level02_Desafio02\Level02IntroScreen.resx">
+      <DependentUpon>Level02IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level05_Desafio05\Level05IntroScreen.resx">
+      <DependentUpon>Level05IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level05_Desafio05\Level05Question01Screen.resx">
+      <DependentUpon>Level05Question01Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level05_Desafio05\Level05Question02Screen.resx">
+      <DependentUpon>Level05Question02Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level05_Desafio05\Level05Question03Screen.resx">
+      <DependentUpon>Level05Question03Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level05_Desafio05\Level05Question04Screen.resx">
+      <DependentUpon>Level05Question04Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level03_Desafio03\Level03EcuacionScreen.resx">
+      <DependentUpon>Level03EcuacionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level03_Desafio03\Level03IntroScreen.resx">
+      <DependentUpon>Level03IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level07_Desafio07\Level07AplausosScreen.resx">
+      <DependentUpon>Level07AplausosScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level07_Desafio07\Level07IntroScreen.resx">
+      <DependentUpon>Level07IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\LevelScreen.resx">
+      <DependentUpon>LevelScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\VideoStoppableScreen.resx">
+      <DependentUpon>VideoStoppableScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\VideoScreen.resx">
+      <DependentUpon>VideoScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\BoardScreen.resx">
+      <DependentUpon>BoardScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Levels\Level01_Desafio01\Level01IntroScreen.resx">
+      <DependentUpon>Level01IntroScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ScreenUI.resx">
+      <DependentUpon>ScreenUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonts\FRR_.TTF" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\MF TEXAS SPRING.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intro_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\board_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\board_penalty_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\board_success_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level03_intro_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic09.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level03_ecuacion_bg.png" />
+    <None Include="Resources\level07_intro_bg.png" />
+    <None Include="Resources\level07_desafio.png" />
+    <None Include="Resources\level06_intro_bg.png" />
+    <None Include="Resources\level06_desafio.png" />
+    <None Include="Resources\level05_intro_bg.png" />
+    <None Include="Resources\level05_desafio.png" />
+    <None Include="Resources\level04_desafio.png" />
+    <None Include="Resources\level03_desafio.png" />
+    <None Include="Resources\level_play_button.png" />
+    <None Include="Resources\level02_barra_validar.png" />
+    <None Include="Resources\level02_items_list.jpg" />
+    <None Include="Resources\level01_intro_bg.png" />
+    <None Include="Resources\board_success_next_bg.png" />
+    <None Include="Resources\level01_desafio.png" />
+    <None Include="Resources\level02_intro_bg.png" />
+    <None Include="Resources\level02_desafio.png" />
+    <None Include="Resources\level00_login_bg.png" />
+    <None Include="Resources\level01_complete_words_bg.png" />
+    <None Include="Resources\check_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_question01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_question02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_question03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_question04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_popup01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_popup02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_popup03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_popup04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level04_intro_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level04_intro_next_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level01_intro_next_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_intro_next_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level03_intro_next_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level05_intro_next_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level00_login_welcome_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level04_optionA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level04_optionB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level04_optionC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level04_situation01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level04_situation02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic01_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic02_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic03_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic04_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic05_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic06_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic07_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic08_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic09_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic10_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic11_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic12_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic13_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic14_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level02_pic15_sel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\board_success_other_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level06_intro_next_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level06_ecuacion_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_intro_next_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_texto_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_end_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_texto_01_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_texto_02_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_texto_03_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_texto_04_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_texto_05_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level07_texto_all_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level06_video_button_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\level06_video_bg.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
