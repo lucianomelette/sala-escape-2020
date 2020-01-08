@@ -7,6 +7,9 @@
 !/TecnoAventura2018/bin/x86/Release/
 
 /TecnoAventura2018/bin/x86/Release/*
+!/TecnoAventura2018/bin/x86/Release/audios/
+!/TecnoAventura2018/bin/x86/Release/images/
+!/TecnoAventura2018/bin/x86/Release/libvlc/
 !/TecnoAventura2018/bin/x86/Release/videos/
 
 /TecnoAventura2018/obj/*
