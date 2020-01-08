@@ -1,6 +1,12 @@
 !/TecnoAventura2018/bin/
 
 /TecnoAventura2018/bin/*
+!/TecnoAventura2018/bin/x86/
+
+/TecnoAventura2018/bin/x86/*
+!/TecnoAventura2018/bin/x86/Release/
+
+/TecnoAventura2018/bin/x86/Release/*
 !/TecnoAventura2018/bin/x86/Release/videos/
 
 /TecnoAventura2018/obj/*
