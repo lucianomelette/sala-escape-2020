@@ -37,7 +37,7 @@ namespace TecnoAventura2018.Screens.Levels
             _lastLevel = null;
 
             // clock
-            clockDiscounter = 60 * 45;
+            clockDiscounter = 60 * 30;
             UpdateClock();
 
             // timer
