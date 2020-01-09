@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using TecnoAventura2018.Properties;
-using TecnoAventura2018.Screens.Levels.Level03_Desafio03;
+using TecnoAventura2018.Screens.Levels.Level04_Desafio04;
 
 namespace TecnoAventura2018.Screens.Levels.Level02_Desafio02
 {
@@ -228,7 +228,7 @@ namespace TecnoAventura2018.Screens.Levels.Level02_Desafio02
             if (ok)
             {
                 board.SuccessOtherOptions();
-                board.SetLevelScreen(new Level03IntroScreen(board));
+                board.SetLevelScreen(new Level04IntroScreen(board));
             }
             else
                 ResetSelection();

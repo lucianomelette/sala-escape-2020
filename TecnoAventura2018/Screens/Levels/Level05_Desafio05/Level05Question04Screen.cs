@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using TecnoAventura2018.Properties;
-using TecnoAventura2018.Screens.Levels.Level06_Desafio06;
+using TecnoAventura2018.Screens.Levels.Level07_Desafio07;
 
 namespace TecnoAventura2018.Screens.Levels.Level05_Desafio05
 {
@@ -64,7 +64,7 @@ namespace TecnoAventura2018.Screens.Levels.Level05_Desafio05
             _closeButton = new Panel();
             _closeButton.Click += (s1, e1) =>
             {
-                board.SetLevelScreen(new Level06IntroScreen(board));
+                board.SetLevelScreen(new Level07IntroScreen(board));
             };
             _closeButton.MouseMove += MouseMoveEvent;
             setupCloseButton();
